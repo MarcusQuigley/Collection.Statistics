@@ -7,17 +7,17 @@ namespace Basic.Collection.Statistics
     {
         private List<int> listInts = new List<int>();
 
-         public override void AddSequentialEntry(int count)
+        public override void AddSequentialEntry(int count)
         {
             listInts.Add(count);
         }
 
         public override void AddRandomEntry(int count)
         {
-            listInts[GetRandomInt] = count; 
+            listInts[GetRandomInt] = count;
         }
 
-        public override int RetrieveKey( )
+        public override int RetrieveKey()
         {
             return listInts[GetRandomInt];
         }

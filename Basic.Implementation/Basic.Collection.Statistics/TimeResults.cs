@@ -7,7 +7,6 @@ namespace Basic.Collection.Statistics
 {
     public class TimeResults
     {
-
         public TimeSpan SequentialInsertsTime { get; set; }
         public RandomInsertTimes RandomInsertsTime { get; set; }
         public TimeSpan RetrieveTime { get; set; }

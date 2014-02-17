@@ -22,14 +22,14 @@ namespace Basic.Collection.Statistics
                 new ListClass(),
                 outputService,
                 countService);
-
+            outputService.WriteMessage("Testing for List<int>");
             listExecutor.Run();
 
             StatsExecutor dictExecutor = new StatsExecutor(new TimeResults(),
                new DictionaryClass(),
                outputService,
                countService);
-
+            outputService.WriteMessage("Testing for Dictionary<int, int>");
             dictExecutor.Run();
 
             Console.Read();

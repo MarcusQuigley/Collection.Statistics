@@ -26,9 +26,7 @@ namespace Basic.Collection.Statistics
 
         public void Run()
         {
-            outputService.WriteMessage("Testing for List<int>");
-
-            timeResults.SequentialInsertsTime = collectionObject.AddSequentialEntries(counts.SeqEntriesCount);
+             timeResults.SequentialInsertsTime = collectionObject.AddSequentialEntries(counts.SeqEntriesCount);
             timeResults.RandomInsertsTime = collectionObject.AddRandomEntries(counts.RanEntriesCount);
             timeResults.RetrieveTime = collectionObject.RetrieveByKey();
 

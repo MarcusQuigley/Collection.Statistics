@@ -49,8 +49,8 @@
     <Compile Include="CountsService.cs" />
     <Compile Include="ListClass.cs" />
     <Compile Include="DictionaryClass.cs" />
-    <Compile Include="DictionaryStatistics.cs" />
-    <Compile Include="ListStatistics.cs" />
+    <Compile Include="Unused\DictionaryStatistics.cs" />
+    <Compile Include="Unused\ListStatistics.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatsExecutor.cs" />

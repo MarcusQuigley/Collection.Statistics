@@ -9,15 +9,13 @@ namespace Basic.Collection.Statistics
     public abstract class CollectionBase
     {
 
-        public TimeSpan AddSequentialEntries(int count)//, Action<int, int> addAction)
+        public TimeSpan AddSequentialEntries(int count)
         {
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
 
             for (int i = 0; i < count; i++)
             {
-                //dictInts.Add(i, i);
-                // addAction(i, i);
                 AddSequentialEntry(i);
             }
 
@@ -34,8 +32,6 @@ namespace Basic.Collection.Statistics
             stopWatch.Start();
             for (int i = 0; i < count; i++)
             {
-               // int position = GetRandomInt();
-               // listInts.Insert(position, i);
                 AddRandomEntry(i);
             }
 
@@ -54,8 +50,7 @@ namespace Basic.Collection.Statistics
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
 
-          int result=  RetrieveKey();
-            //int result = dictInts[key];
+            int result = RetrieveKey();
 
             if (result == -1) return TimeSpan.MinValue;
 
@@ -65,12 +60,11 @@ namespace Basic.Collection.Statistics
 
         public abstract int RetrieveKey();
 
-        private int GetRandomInt()
-        {
-            //TODO NEED TO FIX THIS
-            return new Random().Next(50000);
-        }
-
+        //private int GetRandomInt()
+        //{
+        //    //TODO NEED TO FIX THIS
+        //    return new Random().Next(50000);
+        //}
     }
 
 }
