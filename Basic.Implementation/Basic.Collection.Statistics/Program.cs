@@ -8,70 +8,31 @@ namespace Basic.Collection.Statistics
 {
     class Program
     {
-        //static List<int> listInts =null;
-
-
         static void Main(string[] args)
         {
-            ListStatistics listStats = new ListStatistics();
-            listStats.Run();
+            //ListStatistics listStats = new ListStatistics(new TimeResults());
+            //listStats.Run();
 
-            DictionaryStatistics dictStats = new DictionaryStatistics();
-            dictStats.Run();
+            //DictionaryStatistics dictStats = new DictionaryStatistics();
+            //dictStats.Run();
+
+            CountsService countService = new CountsService(50000, 5000);
+            ConsoleOutputService outputService = new ConsoleOutputService();
+            StatsExecutor listExecutor = new StatsExecutor(new TimeResults(),
+                new ListClass(),
+                outputService,
+                countService);
+
+            listExecutor.Run();
+
+            StatsExecutor dictExecutor = new StatsExecutor(new TimeResults(),
+               new DictionaryClass(),
+               outputService,
+               countService);
+
+            dictExecutor.Run();
 
             Console.Read();
-
-
         }
-
-       //static TimeSpan AddSequentialEntries(int count)
-       // {
-       //     Stopwatch stopWatch = new Stopwatch();
-       //     stopWatch.Start();
-
-       //     for (int i = 0; i < count; i++)
-       //     {
-       //         listInts.Add(i);
-       //     }
-
-       //     stopWatch.Stop();
-       //     return stopWatch.Elapsed;
-       // }
-
-       //static TimeSpan AddRandonEntries(int count, out double individualTimes)
-       //{
-
-       //    Stopwatch stopWatch = new Stopwatch();
-       //    stopWatch.Start();
-       //    for (int i = 0; i < count; i++)
-       //    {
-       //        int position = GetRandomInt();
-       //        listInts.Insert(position, i);
-       //    }
-
-       //    stopWatch.Stop();
-
-       //    individualTimes = stopWatch.ElapsedMilliseconds / (double) count;
-
-       //    return stopWatch.Elapsed;
-       //}
-
-       //static TimeSpan RetrieveByKey(int key)
-       //{
-       //    Stopwatch stopWatch = new Stopwatch();
-       //    stopWatch.Start();
-
-       //    int result = listInts[key];
-
-       //    if (result == -1) return TimeSpan.MinValue;
-
-       //    stopWatch.Stop();
-       //    return stopWatch.Elapsed;
-       //}
-
-       //static int GetRandomInt()
-       //{
-       //    return new Random().Next(listInts.Count);
-       //}
     }
 }
