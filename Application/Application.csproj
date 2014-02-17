@@ -2,21 +2,18 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4E57DA7D-6F23-4029-97B7-7A2A173548D3}</ProjectGuid>
+    <ProjectGuid>{F9E51034-BEF0-457F-95A3-DF837C407D8D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Basic.Collection.Statistics</RootNamespace>
-    <AssemblyName>Basic.Collection.Statistics</AssemblyName>
+    <RootNamespace>Collection.Statistics.Application</RootNamespace>
+    <AssemblyName>Application</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,14 +22,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -44,20 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CollectionBase.cs" />
-    <Compile Include="ConsoleOutputService.cs" />
-    <Compile Include="CountsService.cs" />
-    <Compile Include="ListClass.cs" />
-    <Compile Include="DictionaryClass.cs" />
-    <Compile Include="TimeResults.cs" />
-    <Compile Include="Unused\DictionaryStatistics.cs" />
-    <Compile Include="Unused\ListStatistics.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatsExecutor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <ProjectReference Include="..\Collection.Statistics.CommonTypesLib\CommonTypesLibrary.csproj">
+      <Project>{DB600A92-6952-4227-AE09-0C0C68A22135}</Project>
+      <Name>CommonTypesLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CollectionTypesLibrary\CollectionTypesLibrary.csproj">
+      <Project>{0438B766-B5BC-4567-96C5-A48E92239F2A}</Project>
+      <Name>CollectionTypesLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OutputLibrary\OutputLibrary.csproj">
+      <Project>{DE3CC6C4-E0CA-4857-A0E2-C4249FC4D277}</Project>
+      <Name>OutputLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Diagnostics;
+using Collection.Statistics.CommonTypesLib;
+using Collection.Statistics.OutputLibrary;
+using Collection.Statistics.CollectionTypesLibrary;
 
-namespace Basic.Collection.Statistics
+namespace Collection.Statistics.Application
 {
     //1. class for output
     //2. class to get timed results
