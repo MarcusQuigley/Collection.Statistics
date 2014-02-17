@@ -2,10 +2,11 @@
 using Collection.Statistics.CommonTypesLib;
 using Collection.Statistics.CollectionTypesLibrary;
 using Collection.Statistics.OutputLibrary;
+using Collection.Statistics.InterfacesLibrary;
 
 namespace Collection.Statistics.Application
 {
-    public class StatsExecutor
+    public class StatsExecutor  : IStatsExecutor
     {
         private TimeResults timeResults;
         private CollectionBase collectionObject;

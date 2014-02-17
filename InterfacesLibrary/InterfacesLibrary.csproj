@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0438B766-B5BC-4567-96C5-A48E92239F2A}</ProjectGuid>
+    <ProjectGuid>{378D0865-782A-4EDC-BA5A-A735F813378B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Collection.Statistics.CollectionTypesLibrary</RootNamespace>
-    <AssemblyName>CollectionTypesLibrary</AssemblyName>
+    <RootNamespace>Collection.Statistics.InterfacesLibrary</RootNamespace>
+    <AssemblyName>InterfacesLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,19 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CollectionBase.cs" />
-    <Compile Include="DictionaryClass.cs" />
-    <Compile Include="ListClass.cs" />
+    <Compile Include="ICollectionBase.cs" />
+    <Compile Include="IConsoleOutputService.cs" />
+    <Compile Include="IStatsExecutor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Collection.Statistics.CommonTypesLib\CommonTypesLibrary.csproj">
       <Project>{DB600A92-6952-4227-AE09-0C0C68A22135}</Project>
       <Name>CommonTypesLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InterfacesLibrary\InterfacesLibrary.csproj">
-      <Project>{378D0865-782A-4EDC-BA5A-A735F813378B}</Project>
-      <Name>InterfacesLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

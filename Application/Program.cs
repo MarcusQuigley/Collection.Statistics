@@ -32,6 +32,7 @@ namespace Collection.Statistics.Application
 
             CountsService countService = new CountsService(50000, 5000);
             ConsoleOutputService outputService = new ConsoleOutputService();
+
             StatsExecutor listExecutor = new StatsExecutor(new TimeResults(),
                 new ListClass(),
                 outputService,

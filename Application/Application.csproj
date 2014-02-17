@@ -56,6 +56,10 @@
       <Project>{0438B766-B5BC-4567-96C5-A48E92239F2A}</Project>
       <Name>CollectionTypesLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\InterfacesLibrary\InterfacesLibrary.csproj">
+      <Project>{378D0865-782A-4EDC-BA5A-A735F813378B}</Project>
+      <Name>InterfacesLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OutputLibrary\OutputLibrary.csproj">
       <Project>{DE3CC6C4-E0CA-4857-A0E2-C4249FC4D277}</Project>
       <Name>OutputLibrary</Name>

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using Collection.Statistics.CommonTypesLib;
+using Collection.Statistics.InterfacesLibrary;
 
 namespace Collection.Statistics.CollectionTypesLibrary
 {
-    public abstract class CollectionBase
+    public abstract class CollectionBase  : ICollectionBase
     {
 
         public TimeSpan AddSequentialEntries(int count)
