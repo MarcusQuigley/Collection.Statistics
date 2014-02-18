@@ -1,5 +1,8 @@
 # git ignore file
 *.suo
 *.user
+*.trx
+*.vsmdi
+*.testsettings
 [Bb]in/
 [Oo]bj/
