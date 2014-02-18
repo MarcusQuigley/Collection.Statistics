@@ -2,6 +2,7 @@
 using Collection.Statistics.CommonTypesLib;
 using Collection.Statistics.OutputLibrary;
 using Collection.Statistics.CollectionTypesLibrary;
+using Collection.Statistics.InterfacesLibrary;
 
 namespace Collection.Statistics.Application
 {
@@ -33,14 +34,14 @@ namespace Collection.Statistics.Application
             CountsService countService = new CountsService(50000, 5000);
             ConsoleOutputService outputService = new ConsoleOutputService();
 
-            StatsExecutor listExecutor = new StatsExecutor(new TimeResults(),
+           IStatsExecutor listExecutor = new StatsExecutor(new TimeResults(),
                 new ListClass(),
                 outputService,
                 countService);
             outputService.WriteMessage("Testing for List<int>");
             listExecutor.Run();
 
-            StatsExecutor dictExecutor = new StatsExecutor(new TimeResults(),
+            IStatsExecutor dictExecutor = new StatsExecutor(new TimeResults(),
                new DictionaryClass(),
                outputService,
                countService);

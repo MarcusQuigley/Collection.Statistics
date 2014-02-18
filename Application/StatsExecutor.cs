@@ -9,13 +9,13 @@ namespace Collection.Statistics.Application
     public class StatsExecutor  : IStatsExecutor
     {
         private TimeResults timeResults;
-        private CollectionBase collectionObject;
-        private ConsoleOutputService outputService;
+        private ICollectionBase collectionObject;
+        private IConsoleOutputService outputService;
         private CountsService counts;
 
         public StatsExecutor(TimeResults timeResults,
-            CollectionBase collection,
-            ConsoleOutputService outputService,
+            ICollectionBase collection,
+            IConsoleOutputService outputService,
             CountsService countsService)
         {
             this.timeResults = timeResults;
