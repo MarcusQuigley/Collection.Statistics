@@ -9,5 +9,7 @@ namespace Collection.Statistics.InterfacesLibrary
         void AddSequentialEntry(int count);
         TimeSpan RetrieveByKey();
         int RetrieveKey();
+
+        string Name { get; set; }
     }
 }

@@ -1,52 +1,33 @@
-﻿using System;
-using Collection.Statistics.CommonTypesLib;
-using Collection.Statistics.CollectionTypesLibrary;
-using Collection.Statistics.OutputLibrary;
-using Collection.Statistics.InterfacesLibrary;
+﻿using Collection.Statistics.InterfacesLibrary;
+using System.Collections.Generic;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
+using System.Configuration;
 
 namespace Collection.Statistics.Application
 {
-    public class StatsExecutor  : IStatsExecutor
+    public class StatsExecutor : IStatsExecutor
     {
-        private TimeResults timeResults;
-        private ICollectionBase collectionObject;
-        private IConsoleOutputService outputService;
-        private CountsService counts;
+        private List<ICollectionBase> collectionObjects;
+        private IConsoleOutputService outputObject;
 
-        public StatsExecutor(TimeResults timeResults,
-            ICollectionBase collection,
-            IConsoleOutputService outputService,
-            CountsService countsService)
+        public StatsExecutor(IConsoleOutputService output)
         {
-            this.timeResults = timeResults;
-            this.collectionObject = collection;
-            this.outputService = outputService;
-            this.counts = countsService;
+            UnityContainer container = new UnityContainer();
+            UnityConfigurationSection configSection = (UnityConfigurationSection)ConfigurationManager.GetSection("unity");
+            configSection.Containers.Default.Configure(container);
+
+            this.collectionObjects = new List<ICollectionBase>(container.ResolveAll<ICollectionBase>());
+            this.outputObject = output;
         }
 
         public void Run()
         {
-             timeResults.SequentialInsertsTime = collectionObject.AddSequentialEntries(counts.SeqEntriesCount);
-            timeResults.RandomInsertsTime = collectionObject.AddRandomEntries(counts.RanEntriesCount);
-            timeResults.RetrieveTime = collectionObject.RetrieveByKey();
-
-            OutputResults();
+            foreach (ICollectionBase item in collectionObjects)
+            {
+                ICollectionExecute executeObject = new CollectionExecute(item, outputObject);
+                executeObject.Execute();
+            }
         }
-
-        void OutputResults()
-        {
-            outputService.WriteMessage(string.Format(
-                "Time for {0} Sequential entries = {1}ms",
-                counts.SeqEntriesCount, timeResults.SequentialInsertsTime.TotalMilliseconds));
-            outputService.WriteMessage(string.Format(
-                 "Time for {0} Random entries = {1}ms",
-                 counts.RanEntriesCount, timeResults.RandomInsertsTime.RandomInsertTime.TotalMilliseconds));
-            outputService.WriteMessage(string.Format(
-               "Time for each random insertion = {0}ms", timeResults.RandomInsertsTime.IndividualInsertTime));
-            outputService.WriteMessage(string.Format(
-               "Time for retrieve key = {0}ms", timeResults.RetrieveTime.TotalMilliseconds));
-            outputService.WriteMessage("------------\n");
-        }
-
     }
 }

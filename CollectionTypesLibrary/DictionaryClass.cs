@@ -5,6 +5,11 @@ namespace Collection.Statistics.CollectionTypesLibrary
 {
     public class DictionaryClass : CollectionBase
     {
+        public DictionaryClass()
+        {
+            this.Name = "Dictionary";
+        }
+
         private Dictionary<int, int> dictInts = new Dictionary<int, int>();
 
          public override void AddSequentialEntry(int count)
@@ -26,5 +31,7 @@ namespace Collection.Statistics.CollectionTypesLibrary
         {
             get { return new Random().Next(dictInts.Count); }
         }
+ 
+         
     }
 }

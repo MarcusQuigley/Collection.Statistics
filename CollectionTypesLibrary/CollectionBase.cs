@@ -11,6 +11,11 @@ namespace Collection.Statistics.CollectionTypesLibrary
     public abstract class CollectionBase  : ICollectionBase
     {
 
+        public CollectionBase()
+        {
+            this.Name = "CollectionBase";
+        }
+
         public TimeSpan AddSequentialEntries(int count)
         {
             Stopwatch stopWatch = new Stopwatch();
@@ -67,6 +72,13 @@ namespace Collection.Statistics.CollectionTypesLibrary
         //    //TODO NEED TO FIX THIS
         //    return new Random().Next(50000);
         //}
+
+
+        public string Name
+        {
+            get;
+            set;
+        }
     }
 
 }

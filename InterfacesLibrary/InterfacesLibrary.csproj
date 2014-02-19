@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICollectionBase.cs" />
+    <Compile Include="ICollectionExecute.cs" />
     <Compile Include="IConsoleOutputService.cs" />
     <Compile Include="IStatsExecutor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
